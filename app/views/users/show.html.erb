@@ -8,6 +8,17 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
+</P>
+
+<p>
+  <strong>Microposts:</strong>
+  <ul>
+  <% @user.microposts.each do |micropost| %>
+    <li>
+      <%= micropost.content %>
+    </li>
+  <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
